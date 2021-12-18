@@ -94,7 +94,7 @@ class _SavedPostsPageState extends State<SavedPostsPage> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('',
+        title: const Text('Saved posts',
             style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
         elevation: 0,

@@ -16,9 +16,10 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   String actionBarTitle = 'Lost and Found Items';
-  static const IconData bookmark = IconData(0xe0f1, fontFamily: 'MaterialIcons');
   static const textStyle = TextStyle(color: Colors.grey);
   int _selectedIndex = 0;
+  static const IconData bookmark = IconData(0xe0f1, fontFamily: 'MaterialIcons');
+
   static const List<Widget> _widgetOptions = <Widget>[
     HomePageWidget(),
     SavedPostsPage(),
