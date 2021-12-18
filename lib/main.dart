@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lofo_app/api_client/api_client.dart';
 import 'package:lofo_app/widgets/profile/change_data/change_data.dart';
 import 'package:lofo_app/widgets/profile/saved_posts/saved_posts.dart';
+import 'package:lofo_app/widgets/splash_screen/splashscreen.dart';
 import 'model/saved_posts.dart';
 import 'widgets/home.dart';
 import 'widgets/intro_slider.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightBlue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/slider',
+      initialRoute: '/splash_screen',
       routes: {
         '/slider': (context) => const IntroSliderPage(),
         '/main': (context) => const HomeWidget(),
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => const SignupWidget(),
         '/change_data': (context) => const ChangeDataPage(),
         '/saved_posts': (context) => const SavedPostsPage(),
+        '/splash_screen': (context) => const SplashScreen(),
       },
     );
   }

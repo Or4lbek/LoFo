@@ -26,6 +26,8 @@ class HomePageItemWidget extends StatefulWidget {
 }
 
 class _HomePageItemWidgetState extends State<HomePageItemWidget> {
+  static const IconData bookmark = IconData(0xe0f1, fontFamily: 'MaterialIcons');
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -184,7 +186,7 @@ class _HomePageItemWidgetState extends State<HomePageItemWidget> {
                   }
                   setState(() {});
                 },
-                child: Icon(Icons.favorite, color: (saved_posts_by_id.contains(widget.data.id-1))?Colors.red:Colors.black,)
+                child: Icon(bookmark, color: (saved_posts_by_id.contains(widget.data.id-1))?Colors.red:Colors.black,)
               )
             ),
           ],

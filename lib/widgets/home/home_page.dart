@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:lofo_app/api_client/api_client.dart';
 import 'package:lofo_app/model/record.dart';
@@ -18,6 +20,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   final ScrollController _controller = ScrollController();
   final TextEditingController _search = TextEditingController();
   String _selection = 'title';
+  double value  = 0;
+
   final List<ItemInfoData> dataSet = [
     ItemInfoData(
         'Airpods 2', 'Found', 'Today', 'assets/image/airpods_on_hand.png'),
@@ -33,6 +37,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   void initState() {
     super.initState();
+    downloadData();
   }
   void _showPopupMenu(Offset globalPosition) async {
     await showMenu(
@@ -70,7 +75,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   margin: const EdgeInsets.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(Radius.circular(12)),
-                    color: Colors.grey.withOpacity(0.2)
+                    color: Colors.blueAccent.withOpacity(0.2)
                   ),
                   child: TextField(
                     controller: _search,
@@ -112,7 +117,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     return Text('${snapshot.error}');
                   }
                   if (!snapshot.hasData) {
-                    return const Center(child: Text('LOADING'));
+                    return Center(child:
+                    Container(
+                        margin: const EdgeInsets.all(20),
+                    child:const CircularProgressIndicator()));
                   } else {
                     allRecordPosts = snapshot.data!.toList();
                     var foundRecords = [];
@@ -163,7 +171,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     return Text('${snapshot.error}');
                   }
                   if (!snapshot.hasData) {
-                    return const Center(child: Text('LOADING'));
+                    return  Center(child: Container(
+                      margin: EdgeInsets.all(20),
+                      child:const CircularProgressIndicator()));
+
                   } else {
                     allRecordPosts = snapshot.data!.toList();
                     return ListView.builder(
@@ -240,5 +251,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 }),
           ),
         ]));
+  }
+
+  void downloadData(){
+    Timer.periodic(
+        const Duration(seconds: 1),
+            (Timer timer){
+          setState(() {
+            if(value == 1) {
+              timer.cancel();
+            }
+            else {
+              value = value + 0.1;
+            }
+          });
+        }
+    );
   }
 }

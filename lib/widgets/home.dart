@@ -16,6 +16,7 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   String actionBarTitle = 'Lost and Found Items';
+  static const IconData bookmark = IconData(0xe0f1, fontFamily: 'MaterialIcons');
   static const textStyle = TextStyle(color: Colors.grey);
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
@@ -42,7 +43,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     if (index == 0) {
       actionBarTitle = 'Lost and Found Items';
     } else if (index == 1) {
-      actionBarTitle = 'Create Post';
+      actionBarTitle = 'Saved Posts';
     } else {
       actionBarTitle = 'Profile';
     }
@@ -80,7 +81,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(bookmark),
             label: 'Favourites',
           ),
           BottomNavigationBarItem(

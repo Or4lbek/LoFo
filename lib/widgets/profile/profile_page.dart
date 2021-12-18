@@ -144,31 +144,32 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       color: Colors.black,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamed('/saved_posts');
-                    },
-                    child: Row(
-                      children: const [
-                        Icon(Icons.favorite),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Expanded(
-                            child: Text(
-                          'Saved Posts',
-                          style: TextStyle(fontSize: 20),
-                        )),
-                        Icon(Icons.chevron_right)
-                      ],
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8),
-                    child: Divider(
-                      color: Colors.black,
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Navigator.of(context).pushNamed('/saved_posts');
+                  //   },
+                  //   // child: Row(
+                  //   //   children: const [
+                  //   //     Icon(Icons.favorite),
+                  //   //     SizedBox(
+                  //   //       width: 5,
+                  //   //     ),
+                  //   //     // Expanded(
+                  //   //     //     child: Text(
+                  //   //     //   'Saved Posts',
+                  //   //     //   style: TextStyle(fontSize: 20),
+                  //   //     // )
+                  //   //     //   ),
+                  //   //     Icon(Icons.chevron_right)
+                  //   //   ],
+                  //   // ),
+                  // ),
+                  // const Padding(
+                  //   padding: EdgeInsets.symmetric(vertical: 8),
+                  //   child: Divider(
+                  //     color: Colors.black,
+                  //   ),
+                  // ),
                   Row(
                     children: const [
                       Icon(Icons.lock),
