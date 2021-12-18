@@ -175,20 +175,24 @@ class _HomePageItemWidgetState extends State<HomePageItemWidget> {
               ),
             ),
             Positioned(
-              top: 10,
-              right: 20,
-              child: GestureDetector(
-                onTap: (){
-                  if(saved_posts_by_id.contains(widget.data.id-1)){
-                    saved_posts_by_id.remove(widget.data.id-1);
-                  }else{
-                    saved_posts_by_id.add(widget.data.id-1);
-                  }
-                  setState(() {});
-                },
-                child: Icon(bookmark, color: (saved_posts_by_id.contains(widget.data.id-1))?Colors.red:Colors.black,)
-              )
-            ),
+                top: 10,
+                right: 10,
+                child: GestureDetector(
+                    onTap: () {
+                      if (saved_posts_by_id.contains(widget.data.id - 1)) {
+                        saved_posts_by_id.remove(widget.data.id - 1);
+                      } else {
+                        saved_posts_by_id.add(widget.data.id - 1);
+                      }
+                      setState(() {});
+                    },
+                    child: Icon(
+                      bookmark,
+                      size: 35,
+                      color: (saved_posts_by_id.contains(widget.data.id - 1))
+                          ? Colors.red
+                          : Colors.black,
+                    ))),
           ],
         ),
       ),
