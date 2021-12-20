@@ -19,6 +19,7 @@ class AnimatedAddItem extends StatefulWidget {
 }
 
 class _AnimatedAddItemState extends State<AnimatedAddItem> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -328,7 +329,7 @@ class _AddItemPageWidgetState extends State<AddItemPageWidget> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
                             color: (type == 'Lost')
-                                ? tealGreen
+                                ? Colors.blueAccent
                                 : Colors.grey.withOpacity(0.2)),
                         child: Center(
                             child: Text('Lost',
@@ -352,7 +353,7 @@ class _AddItemPageWidgetState extends State<AddItemPageWidget> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
                             color: (type == 'Found')
-                                ? tealGreen
+                                ? Colors.blueAccent
                                 : Colors.grey.withOpacity(0.2)),
                         child: Center(
                             child: Text('Found',
@@ -561,7 +562,7 @@ class _AddItemPageWidgetState extends State<AddItemPageWidget> {
                     width: double.infinity,
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(999)),
-                        color: tealGreen),
+                        color: Colors.blueAccent),
                     child: const Center(
                         child: Text(
                       'Create Post',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lofo_app/widgets/login/signup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'styled_widgets.dart';
 
 class SigninWidget extends StatefulWidget {
@@ -11,7 +12,9 @@ class SigninWidget extends StatefulWidget {
 }
 
 class _SigninWidgetState extends State<SigninWidget> {
+
   bool hidePassword = true;
+
   InputDecoration getDec(text, icon, icon_1) {
     InputDecoration decoration = InputDecoration(
       prefixIcon: Icon(icon),
